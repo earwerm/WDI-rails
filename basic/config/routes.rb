@@ -7,4 +7,12 @@ Basic::Application.routes.draw do
   get '/dogs' => 'dogs#index'
   get '/dogs/new' => 'dogs#new'
   get '/dogs/faq' => 'dogs#faq'
+  get '/dogs/faq2' => 'dogs#faq2'
+
+  get '/auto/:color' => 'auto#color'
+  get '/auto/:hp/:torque' => 'auto#engine'
+
+  get '/calc/:x/:y/:operator' => 'calc#calculate'
+
+  get '/funny' => 'funny#lol'
 end
