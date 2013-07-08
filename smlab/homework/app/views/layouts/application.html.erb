@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Homework</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<h1>SchMoogle</h1>
+<h2>The Google of Schtocks & Movies</h2>
+
+<%= yield %>
+
+<nav>
+<h2><a href="/home">SchMoogle again!</a></h2>
+</nav>
+</body>
+</html>

@@ -1,0 +1,26 @@
+body {
+  background-color: #aa22aa;
+  color: #1a1a1a;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+#container {
+  width: 960px;
+  margin: auto;
+}
+
+nav ul li {
+  display: inline;
+  list-style: none;
+}
+
+nav ul li a {
+  color: white;
+}
+
+img {
+  max-width: 200px;
+}

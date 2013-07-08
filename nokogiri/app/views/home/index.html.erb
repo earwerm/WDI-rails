@@ -1,0 +1,6 @@
+<h1>Welcome to Nokogiri Demo</h1>
+
+<%= form_tag '/tumblr', :method => 'get' do %>
+<%= text_field_tag 'query' %>
+  <%= submit_tag 'get photos' %>
+<% end %>
