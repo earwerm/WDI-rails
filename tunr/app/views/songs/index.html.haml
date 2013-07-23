@@ -1,0 +1,12 @@
+%table#songs
+  - @songs.each do |song|
+    %tr
+      %td
+        %span= song.name
+      %td
+        %span= song.genres.first.try(:name) || 'Anonymous'
+        %td
+        %span= image_tag(song.image)
+      %td
+        = link_to('Edit', edit_song_path(song), :class => 'button radius tiny') if is_admin?
+

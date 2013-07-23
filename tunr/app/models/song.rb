@@ -18,4 +18,6 @@ class Song < ActiveRecord::Base
   belongs_to :artist
   has_and_belongs_to_many :mixtapes
   has_and_belongs_to_many :genres
+
+  validates :name, :presence => true
 end

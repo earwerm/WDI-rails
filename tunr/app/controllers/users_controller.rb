@@ -2,7 +2,6 @@ class UsersController < ApplicationController
   before_filter :check_if_logged_in, :except => [:new, :create]
   before_filter :check_if_admin, :only => [:index, :destroy]
 
-
   def index
     @users = User.all
   end
@@ -16,6 +15,7 @@ class UsersController < ApplicationController
     if @user.save
       redirect_to(root_path)
     else
+      @odj = @user
       render :new
     end
   end
@@ -30,6 +30,7 @@ class UsersController < ApplicationController
    if @user.update_attributes(params[:user])
     redirect_to(root_path)
    else
+    @odj = @user
     render :new
    end
  end
@@ -37,7 +38,7 @@ class UsersController < ApplicationController
   def destroy
     user = User.find(params[:id])
     user.destroy
-    redirect_to(users_path)
+    redirect_to(root_path)
   end
 
   private

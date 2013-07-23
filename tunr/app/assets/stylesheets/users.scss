@@ -10,3 +10,18 @@
     background-color: $cell_color;
   }
 }
+
+
+#albums {
+  img {
+    width: 100px;
+    height: 100px;
+  }
+
+  td {
+     background-color: $cell_color;
+     table-layout: center;
+     text-align: center;
+     list-style-image: center;
+  }
+}

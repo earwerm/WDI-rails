@@ -1,5 +1,5 @@
 class AlbumsController < ApplicationController
-  before_filter :check_if_admin, :only => [:new, :create, :edit, :update]
+  before_filter :check_if_admin, :only => [:new, :create, :edit, :update, :destroy]
 
   def index
     @albums = Album.order(:name)
@@ -14,6 +14,7 @@ class AlbumsController < ApplicationController
     if @album.save
       redirect_to(albums_path)
     else
+      @obj = @album
       render :new
     end
   end
@@ -28,8 +29,15 @@ class AlbumsController < ApplicationController
     if @album.update_attributes(params[:album])
       redirect_to(albums_path)
     else
+      @obj = @album
       render :new
     end
+  end
+
+  def destroy
+    album = Album.find(params[:id])
+    album.destroy
+    redirect_to(root_path)
   end
 
   private
